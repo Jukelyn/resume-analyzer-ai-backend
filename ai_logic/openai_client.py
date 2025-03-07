@@ -5,7 +5,6 @@ import json
 client = openai.OpenAI(api_key=Config.API_KEY)
 
 def chunk_text(text, max_tokens=4096):
-    """Splits long text into smaller chunks."""
     words = text.split()
     chunks = []
     while words:
@@ -15,7 +14,6 @@ def chunk_text(text, max_tokens=4096):
     return chunks
 
 def analyze_text(user_text):
-    """Handles text input and ensures it fits within OpenAI token limits."""
     text_chunks = chunk_text(user_text, max_tokens=4096)
 
     results = []

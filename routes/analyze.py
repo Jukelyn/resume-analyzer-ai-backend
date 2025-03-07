@@ -15,7 +15,6 @@ def allowed_file(filename):
     return "." in filename and filename.rsplit(".", 1)[1].lower() in ALLOWED_EXTENSIONS
 
 def extract_text_from_pdf(file):
-    """Saves the uploaded PDF and extracts its text."""
     filename = secure_filename(file.filename)
     pdf_path = os.path.join(UPLOAD_FOLDER, filename)
     
