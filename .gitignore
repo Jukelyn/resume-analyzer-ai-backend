@@ -1,0 +1,41 @@
+# Byte-compiled / cached files
+__pycache__/
+*.py[cod]
+*$py.class
+
+# Virtual environment
+venv/
+.env/
+*.venv/
+Pipfile.lock
+poetry.lock
+
+# Ignore environment variable files
+.env
+*.env
+
+# IDE / Editor files
+.vscode/
+.idea/
+*.sublime-project
+*.sublime-workspace
+
+# Logs
+logs/
+*.log
+nohup.out
+
+# MacOS files
+.DS_Store
+
+# Python packaging
+dist/
+build/
+*.egg-info/
+
+# Jupyter Notebooks Checkpoints
+.ipynb_checkpoints/
+
+# Database and Secrets
+*.sqlite3
+*.db
