@@ -1,6 +1,7 @@
 import pytest
 from app import app
 
+
 @pytest.fixture
 def client():
     """Fixture to create a test client for Flask app."""
@@ -8,14 +9,17 @@ def client():
     with app.test_client() as client:
         yield client
 
+
 def test_analyze_success(client):
     """Test if the /analyze endpoint returns a valid response."""
     response = client.post("/analyze", json={"text": "Analyze this text."})
-    
+
     assert response.status_code == 200
     json_data = response.get_json()
     assert "analysis" in json_data
-    assert isinstance(json_data["analysis"], str)  # Ensure response is a string
+    # Ensure response is a string
+    assert isinstance(json_data["analysis"], str)
+
 
 def test_analyze_missing_text(client):
     """Test if the /analyze endpoint handles missing text correctly."""
